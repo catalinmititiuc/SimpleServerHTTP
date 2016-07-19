@@ -14,6 +14,8 @@ import logging
 import cgi
 import unicodedata
 import argparse
+import os
+import tempfile
 
 
 class RequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
@@ -225,6 +227,9 @@ def main():
         PORT = parser.parse_args().port
     else:
         PORT = 8000
+
+    work = tempfile.mkdtemp(prefix="xlserver")
+    print os.path.dirname(os.path.realpath(__file__))
 
     httpd = SocketServer.TCPServer(("", PORT), RequestHandler)
 
