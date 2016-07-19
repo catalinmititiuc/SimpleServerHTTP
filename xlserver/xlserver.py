@@ -158,12 +158,12 @@ def process_sheet(table_sheet, table_rows, table_row_col, table_row_col_head):
 def upload_table(file_input, filename):
 
     if filename == '':
-        with open("index_error.template", 'r') as index_error:
+        with open("templates/index_error.template", 'r') as index_error:
             index_err_message = Template(index_error.read())
             return index_err_message.substitute(error_message="Please enter a file!")
 
     if filename[len(filename)-4:] != ".xls" and filename[len(filename)-5:] != ".xlsx":
-        with open("index_error.template", 'r') as index_error:
+        with open("templates/index_error.template", 'r') as index_error:
             index_err_message = Template(index_error.read())
             return index_err_message.substitute(error_message="Wrong file extension!")
 
@@ -182,17 +182,17 @@ def upload_table(file_input, filename):
         sheet_name = sheet_name.replace(' ', '-')
         id_tabs_list.append(sheet_name)
 
-    with open("index.template", 'r') as index_file:
+    with open("templates/index.template", 'r') as index_file:
         index = Template(index_file.read())
-        with open("table.template", 'r') as table_file:
+        with open("templates/table.template", 'r') as table_file:
             table = Template(table_file.read())
-            with open("table_rows.template", 'r') as table_rows_file:
+            with open("templates/table_rows.template", 'r') as table_rows_file:
                 table_rows = Template(table_rows_file.read())
-                with open("table_row_col.template", 'r') as table_row_col:
+                with open("templates/table_row_col.template", 'r') as table_row_col:
                     table_row_col = Template(table_row_col.read())
-                    with open("table_row_col_head.template", 'r') as table_row_col_head:
+                    with open("templates/table_row_col_head.template", 'r') as table_row_col_head:
                         table_row_col_head = Template(table_row_col_head.read())
-                        with open("tabs.template", 'r') as tabs:
+                        with open("templates/tabs.template", 'r') as tabs:
                             tabs = Template(tabs.read())
                             num_sheet = 0
                             render_table = ""
