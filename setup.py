@@ -19,12 +19,12 @@ setup(name=PACKAGE_NAME,
       long_description=DESCRIPTION,
       author='Catalin Mititiuc',
       author_email='mititiuc.cata@gmail.com',
-      url='https://github.com/catalinmititiuc/SimpleServerHTTP/tree/master/HTTPServer/xlsserver',
+      url='https://github.com/catalinmititiuc/xlserver',
       license='GPLv2',
       packages=find_packages(exclude=['ez_setup']),
       entry_points = {
           'console_scripts': [
-              'xlserver = ilogin.ilogin3:main',
+              'xlserver = xlserver.xlserver:main',
           ]},
       classifiers=[
           'Environment :: Console',

@@ -216,9 +216,14 @@ def upload_table(file_input, filename):
                                     tab=render_tab,
                                     table=render_table)
 
-PORT = 8000
+def main():
+    PORT = 8000
 
-httpd = SocketServer.TCPServer(("", PORT), RequestHandler)
+    httpd = SocketServer.TCPServer(("", PORT), RequestHandler)
 
-print "serving at port", PORT
-httpd.serve_forever()
+    print "serving at port", PORT
+    httpd.serve_forever()
+
+
+if __name__ == "__main__":
+    main()
