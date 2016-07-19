@@ -1,2 +1,2 @@
-include *.rst
 global-exclude *.pyc
+recursive-include xlserver *

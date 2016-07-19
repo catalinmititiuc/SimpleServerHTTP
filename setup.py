@@ -1,9 +1,8 @@
 """ Install
 """
 from setuptools import setup, find_packages
-import os, sys
 
-PACKAGE_NAME = "xlsserver"
+PACKAGE_NAME = "xlserver"
 PACKAGE_VERSION = "1.0"
 SUMMARY = (
     "Simple Server HTTP for reading *.xls and *.xlsx files. "

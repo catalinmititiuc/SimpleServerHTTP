@@ -16,6 +16,7 @@ import unicodedata
 import argparse
 import os
 import tempfile
+import sys
 
 
 class RequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
@@ -228,8 +229,12 @@ def main():
     else:
         PORT = 8000
 
-    work = tempfile.mkdtemp(prefix="xlserver")
-    print os.path.dirname(os.path.realpath(__file__))
+    wdir = os.path.dirname(os.path.realpath(__file__))
+    os.chdir(wdir)
+    print '================'
+    print wdir
+
+    # work = tempfile.mkdtemp(prefix="xlserver")
 
     httpd = SocketServer.TCPServer(("", PORT), RequestHandler)
 
