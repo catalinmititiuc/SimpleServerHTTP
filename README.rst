@@ -16,5 +16,10 @@ Install
 
 How it works?
 =============
-xlserver -p PORT_NO
+
+::
+
+  $: xlserver -p 8000
+
+Access http://localhost:8000
 
