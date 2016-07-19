@@ -13,8 +13,7 @@ import xlrd
 import logging
 import cgi
 import unicodedata
-import codecs
-# import pdb; pdb.set_trace()
+import argparse
 
 
 class RequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
@@ -216,8 +215,16 @@ def upload_table(file_input, filename):
                                     tab=render_tab,
                                     table=render_table)
 
+
 def main():
-    PORT = 8000
+
+    parser = argparse.ArgumentParser(description='Server PORT.')
+    parser.add_argument("-p", "--port", help='set PORT (default: 8000)', type=int)
+
+    if parser.parse_args().port is not None:
+        PORT = parser.parse_args().port
+    else:
+        PORT = 8000
 
     httpd = SocketServer.TCPServer(("", PORT), RequestHandler)
 
