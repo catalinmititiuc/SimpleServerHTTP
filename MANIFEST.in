@@ -1,2 +1,2 @@
-include templates/*.template
-include datatables/*
+include *.rst
+global-exclude *.pyc

@@ -22,6 +22,7 @@ setup(name=PACKAGE_NAME,
       url='https://github.com/catalinmititiuc/xlserver',
       license='GPLv2',
       packages=find_packages(exclude=['ez_setup']),
+      include_package_data=True,
       entry_points = {
           'console_scripts': [
               'xlserver = xlserver.xlserver:main',
