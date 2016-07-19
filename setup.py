@@ -33,4 +33,7 @@ setup(name=PACKAGE_NAME,
           'Operating System :: OS Independent',
           'Topic :: Software Development :: Libraries :: Python Modules',
           ],
+      install_requires=[
+          'xlrd',
+          ],
 )
