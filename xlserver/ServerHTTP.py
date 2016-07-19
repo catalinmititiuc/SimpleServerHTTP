@@ -31,12 +31,6 @@ class RequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             #logging.error(item)
         result = upload_table(form.list[0].file, form.list[0].filename)
 
-        file = codecs.open('test.html', 'w', encoding='utf-8')
-
-        file.write(result)
-
-        file.close()
-
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         # self.send_header("Content-length", len(result) + 1)
