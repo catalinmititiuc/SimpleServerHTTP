@@ -3,13 +3,12 @@
 from setuptools import setup, find_packages
 
 PACKAGE_NAME = "xlserver"
-PACKAGE_VERSION = "1.0"
+PACKAGE_VERSION = "1.1"
 SUMMARY = (
     "Simple Server HTTP for reading *.xls and *.xlsx files. "
 )
 DESCRIPTION = (
-    open("README.rst", 'r').read() + '\n\n' +
-    open('HISTORY.rst', 'r').read()
+    open("README.rst", 'r').read()
 )
 
 setup(name=PACKAGE_NAME,
